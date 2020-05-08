@@ -26,13 +26,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/meetings', function () {
-    return new MeetingCollection(Meeting::all());
+    return new MeetingCollection(Meeting::all()->sortBy->county);
 });
 
 Route::get('/resource', function () {
-    return new ResourcesCollection(Resource::all());
+    return new ResourcesCollection(Resource::all()->sortBy->name);
 });
 
 Route::get('/center', function () {
-    return new CenterCollection(Center::all());
+    return new CenterCollection(Center::all()->sortBy->county);
 });

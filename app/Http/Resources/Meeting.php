@@ -15,7 +15,14 @@ class meeting extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'county' => $this->county,
+            'location' => $this->location,
+            'date' => $this->date,
+            'time' => $this->time,
+            'type' => $this->type,
+        ];
     }
 
     public function sort() {

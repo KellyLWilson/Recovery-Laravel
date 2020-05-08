@@ -7,9 +7,8 @@ use App\Meeting;
 use Illuminate\Http\Request;
 
 
+
     Route::get('/meetings', function () {
         return new MeetingCollection(Meeting::all());
     });
-
-    
 

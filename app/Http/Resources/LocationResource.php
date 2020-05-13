@@ -4,8 +4,8 @@ namespace App\Http\Resources;
 
 //use Illuminate\Http\Resources\Json\ResourceCollection;
 use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Http\Resources\Json\ResourceCollection;
-class meeting extends JsonResource
+
+class LocationResource extends JsonResource
 {
     /**
      * Transform the resource collection into an array.
@@ -17,11 +17,9 @@ class meeting extends JsonResource
     {
         return [
             'id' => $this->id,
+            'name' => $this->name,
             'county' => CountyResource::collection($this->county),
-            'location' => LocationResource::collection($this->location),
-            'date' => $this->date,
-            'time' => $this->time,
-            'type' => $this->type,
+            
         ];
     }
 

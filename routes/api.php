@@ -25,9 +25,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/meetings', function () {
-    return new MeetingCollection(Meeting::all()->sortBy->county);
-});
+// Route::get('/meetings', function () {
+//     return new MeetingCollection(Meeting::all()->sortBy->county);
+// });
 
 Route::get('/resource', function () {
     return new ResourcesCollection(Resource::all()->sortBy->name);
@@ -36,3 +36,5 @@ Route::get('/resource', function () {
 Route::get('/center', function () {
     return new CenterCollection(Center::all()->sortBy->county);
 });
+
+Route::get('/meetings', 'MeetingController@index');

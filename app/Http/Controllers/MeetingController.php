@@ -11,12 +11,9 @@ class MeetingController extends Controller
 {
     public function index()
     {
-        return new Meeting(Meeting::with(['locations', 'counties'])->get
-        ());
+        return new MeetingCollection(Meeting::with(['location', 'location.county'])->get());
     }
-
-    // Route::get('/meetings', function () {
-    //     return new MeetingCollection(Meeting::all());
-    // });
+    
+    
     }
 

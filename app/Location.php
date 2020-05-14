@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Location extends Model
 {
   
-  public function counties() 
+  public function county() 
   {
-    return $this->hasOne('App\County');
+    return $this->belongsToMany('App\County', 'locations_counties', 'location_id', 'county_id');
   }
 
-  public function meetings() 
+  public function meeting() 
   {
-    return $this->hasMany('App\Meeting');
+    return $this->hasOne('App\Meeting');
   }
 
 

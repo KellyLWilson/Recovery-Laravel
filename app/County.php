@@ -4,16 +4,16 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CountyResource extends Model
+class County extends Model
 {
   
   //protected $fillable = ['county'];
 
   
 
-  public function location() 
+  public function locations() 
   {
-    return $this->hasMany('App\Location');
+    return $this->belongsToMany('App\Location', 'locations_counties', 'location_id', 'county_id');
   }
 
 

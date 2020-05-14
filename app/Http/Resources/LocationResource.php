@@ -18,7 +18,7 @@ class LocationResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'county' => CountyResource::collection($this->county),
+
             
         ];
     }

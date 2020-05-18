@@ -14,6 +14,11 @@ class MeetingController extends Controller
         return new MeetingCollection(Meeting::with(['location', 'location.county'])->get());
     }
     
-    
+
+    public function show()
+    {
+        
+    }
+
     }
 

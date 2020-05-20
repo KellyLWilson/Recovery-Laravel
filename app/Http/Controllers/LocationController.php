@@ -12,8 +12,7 @@ class LocationController extends Controller
    
     public function index()
     {
-        return new Location(Location::with(['meetings'])->get
-        ());
+        return new Location(Location::with(['meetings', 'location.counties', 'location','id'])->get());
     }
 }
     

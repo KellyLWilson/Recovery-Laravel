@@ -6,16 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Location extends Model
 {
-  
-  public function county() 
-  {
-    return $this->belongsToMany('App\County', 'locations_counties', 'location_id', 'county_id');
-  }
+  //protected $with = ['county'];
 
-  public function meeting() 
-  {
-    return $this->hasOne('App\Meeting');
-  }
+  // public function county() 
+  // {
+  //   return $this->hasOne('App\County', 'id', 'county_id');
+  // }
+
+  // public function meeting() 
+  // {
+  //   return $this->belongsTo('App\Meeting');
+  // }
 
 
 }

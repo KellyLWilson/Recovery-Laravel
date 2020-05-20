@@ -17,17 +17,22 @@ class Meeting extends Model
 //   }
   //protected $defaultSort = ['county'];
 
-  public function location() 
-  {
-    return $this->hasOne(Location::class, 'id', 'location_id');
-  }
+  // public function location() 
+  // {
+  //   return $this->hasMany(Location::class, 'id', 'location_id');
+  // }
 
 
   // public function county()
   // {
-  //   return $this->hasMany('App\County', 'locations_counties')
-  //   ->withPivot('county');
+  //   return $this->hasOne('App\Location', 'id', 'location_id');
+    
   // }
+
+  public function county()
+  {
+    return $this->hasOne('App\County', 'id', 'county_id');
+  }
 
 
 }

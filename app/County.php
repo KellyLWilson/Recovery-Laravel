@@ -11,10 +11,23 @@ class County extends Model
 
   
 
-  public function locations() 
+  // public function locations() 
+  // {
+  //   return $this->belongsToMany('App\Location', 'county_id');
+  // }
+
+  // public function pivot()
+  // {
+  // $county = County ::find(1);
+  // foreach ($county->location as $location)
+  // {
+  //   echo $location->pivot->created_at;
+  //   return $this->belongsToMany('locations')->withPivot('county', 'location');
+  // }
+  //}
+
+  public function meeting()
   {
-    return $this->belongsToMany('App\Location', 'locations_counties', 'location_id', 'county_id');
+    return $this->hasOne('App\Meeting');
   }
-
-
 }

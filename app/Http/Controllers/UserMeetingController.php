@@ -21,15 +21,9 @@ class UserMeetingController extends Controller
         $meet->user_id = $request->user_id;
         $meet->meeting_id = $request->meeting_id;
         $meet->save();
-
-        //return new MeetingCollection(Meeting::where(['meeting'])->get());
+        
 
         return response($meet, 200);
-    }
-
-    public function meetingsByUser(Request $request)
-    {
-
     }
 
 

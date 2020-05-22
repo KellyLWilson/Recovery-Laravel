@@ -15,7 +15,6 @@ class CreateUserMeetingsTable extends Migration
     {
         Schema::create('user_meetings', function (Blueprint $table) {
             $table->id();
-            $table->string('bookmarks');
             $table->unsignedBigInteger('meeting_id');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();

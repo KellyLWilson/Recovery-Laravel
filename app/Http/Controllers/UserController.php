@@ -18,9 +18,9 @@ class UserController extends Controller
         return response()->json(['message' => 'User not found!'], 404);
     }
 
-    public function saves()
-    {
-        return $this->belongsToMany('App\Meeting')->wherePivot('bookmarks','saved');
-    }
+    // public function saves()
+    // {
+    //     return $this->belongsToMany('App\Meeting')->wherePivot('bookmarks','saved');
+    // }
 
 }

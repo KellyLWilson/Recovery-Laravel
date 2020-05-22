@@ -18,10 +18,7 @@ class MeetingController extends Controller
     {
         return new MeetingCollection(Meeting::with(['county'])->get()->sortBy->county);
     }
-    public function saves()
-    {
-        return $this->belongsToMany('App\User')->wherePivot('bookmarks','saved');
-    }
+
     
 
     }

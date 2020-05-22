@@ -34,6 +34,12 @@ class Meeting extends Model
     return $this->hasOne('App\County', 'id', 'county_id');
   }
 
+  public function users()
+  {
+      return $this->hasOne('App\User');
+      
+  }
 
+  
 }
 

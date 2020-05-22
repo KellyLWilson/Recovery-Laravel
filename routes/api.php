@@ -32,8 +32,12 @@ Route::post('/register', 'AuthController@register');
 Route::post('login', 'AuthController@login');
 Route::post('/logout', 'AuthController@logout');
 
-
+Route::post('/user_meetings', 'UserMeetingController@store');
 Route::get('/meetings','MeetingController@index');
+Route::get('/user_meetings', 'UserMeetingController@index');
+Route::get('/user_meetings/{user_id}', 'UserMeetingController@userIds');
+//Route::get('/user/{user_id}', 'UserController@saves');
+//Route::get('/meetings/{user_id}', 'MeetingController@saves');
 //  Route::get('/counties', 'CountyController@index');
 //Route::get('/counties', 'CountyController@index');
 //Route::get('/counties/{county}', 'CountyController@MeetingsByCounty');

@@ -27,6 +27,19 @@ class UserMeetingController extends Controller
     }
 
 
+    public function deleteMeeting(Request $request)
+    {
+        
+            //$meet = UserMeeting::first($request->meeting_id);
+            $meet = UserMeeting::where('meeting_id', $request->input('meeting_id'))->delete();
+            //$meet->user_id = $request->user_id;
+            //$meet->meeting_id = $request->input('meeting_id');
+            //$meet->delete();
+
+            $response = "Meeting Removed";
+        return response($response, 200);
+    }
+
     public function userIds ($user_id)
     {
         return UserMeeting::where('user_id', $user_id)->get();

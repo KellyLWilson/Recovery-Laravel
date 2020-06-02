@@ -4,11 +4,13 @@ use App\Http\Resources\MeetingCollection;
 use App\Http\Resources\CenterCollection;
 use App\Http\Resources\ResourcesCollection;
 use App\Http\Resources\CountyCollection;
+use App\Http\Resources\UserMeetingCollection;
 use App\Meeting;
 use App\Center;
 use App\Resource;
 use App\Location;
 use App\County;
+use App\UserMeeting;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +35,8 @@ Route::post('login', 'AuthController@login');
 Route::post('/logout', 'AuthController@logout');
 
 Route::post('/user_meetings', 'UserMeetingController@store');
+Route::post('/deleteMeeting', 'UserMeetingController@deleteMeeting');
+//Route::delete('/UserMeetings/{id}', 'UserMeeting@destroy');
 Route::get('/meetings','MeetingController@index');
 Route::get('/user_meetings', 'UserMeetingController@index');
 //Route::get('/user_meetings/{user_id}', 'UserMeetingController@userIds');

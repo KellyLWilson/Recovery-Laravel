@@ -55,4 +55,25 @@ class AuthController extends Controller
         ]);
         return response($response, 200);
     }
+
+    // public function deleteMeeting(Request $request)
+    // {
+
+        
+    //      $meet = UserMeeting::delete([
+    //          'user_id' => $request['user_id'],
+    //          'meeting_id' => $request['meeting_id'],
+    //      ]);
+    //     // $meet->user_id = $request->user_id;
+    //     // $meet->meeting_id->meeting_id;
+    //     //$meet->delete();
+    //     return response(200);
+    // }
+
+    public function userIds ($user_id)
+    {
+        return UserMeeting::where('user_id', $user_id)->get();
+    }
+
+
 }
